@@ -1,0 +1,57 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    container_name: t1-rabbitmq
+    ports:
+      - "5672:5672"     # AMQP
+      - "15672:15672"   # UI http://localhost:15672  (guest/guest)
+
+  api:
+    build:
+      context: ..
+      dockerfile: infraestructure/Dockerfile.api
+    container_name: t1-api
+    env_file: ../.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+
+  publisher:
+    build:
+      context: ..
+      dockerfile: infraestructure/Dockerfile.publisher
+    container_name: t1-publisher
+    env_file: ../.env
+    depends_on:
+      - rabbitmq
+      - api
+    # se ejecuta a demanda con "docker compose run", este no queda corriendo
+
+  sub-valparaiso:
+    build:
+      context: ..
+      dockerfile: infraestructure/Dockerfile.subscriber
+    container_name: t1-sub-valpo
+    env_file: ../.env
+    environment:
+      CITY_NAME: "Valparaíso"
+      CITY_LAT: "-33.036"
+      CITY_LON: "-71.62963"
+    depends_on:
+      - rabbitmq
+      - api
+
+  sub-arica:
+    build:
+      context: ..
+      dockerfile: infraestructure/Dockerfile.subscriber
+    container_name: t1-sub-arica
+    env_file: ../.env
+    environment:
+      CITY_NAME: "Arica"
+      CITY_LAT: "-18.4746"
+      CITY_LON: "-70.29792"
+    depends_on:
+      - rabbitmq
+      - api
