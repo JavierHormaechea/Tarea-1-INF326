@@ -35,7 +35,7 @@ def on_msg(ch, method, props, body):
         # manejar errores de parseo o request
         print(f"[{CITY_NAME}] Error procesando '{texto}': {e}")
     finally:
-        # confirmar recepción del mensaje (ya que auto_ack=False)
+        # confirmar recepción del mensaje
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
 

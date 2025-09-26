@@ -33,7 +33,7 @@ docker compose down
 ```
 
 ### Probar los contenedores
-- Se puede verificar laapi con 
+- Se puede verificar la api con 
 ```bash
 curl http://localhost:8000/sismos/1
 ```
