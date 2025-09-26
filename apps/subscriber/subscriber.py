@@ -21,8 +21,6 @@ def on_msg(ch, method, props, body):
 
         lat = float(lat); lon = float(lon); mag = float(mag)
 
-        #calular la distancia entre el sismo y la ciudad
-        #creo que hay que usar una funcion llamada haversine que no se como funciona
         dist = calcular_distancia_km(CITY_LAT, CITY_LON, lat, lon)
         
         print(f"[{CITY_NAME}] msg={texto} -> dist={dist:.1f} km, mag={mag}")
