@@ -19,6 +19,9 @@ Con esto los servicios que se levantan son:
 - Publisher
 - Subscriber Valparaiso
 - Subscriber Arica
+- Subscriber Coquimbo
+- Subscriber Concepcion
+- Subscriber Punta Arenas
 
 - Para detener todo:
 ```bash
@@ -36,7 +39,7 @@ curl http://localhost:8000/sismos/1
 # Valparaíso
 docker compose logs -f sub-valparaiso
 
-#abrir otra terminal y ejecutar para ver logs de Arica:
+#abrir otra terminal y ejecutar para ver logs de otro subscriber:
 docker compose logs -f sub-arica
 ```
 
