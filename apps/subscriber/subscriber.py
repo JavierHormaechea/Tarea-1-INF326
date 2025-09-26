@@ -1,6 +1,6 @@
 import json, os, time
 import pika, requests
-from common import haversine_km
+from common import calcular_distancia_km
 
 # config general
 RABBITMQ_URL = os.getenv("RABBITMQ_URL", "amqp://guest:guest@localhost:5672/")
@@ -23,7 +23,7 @@ def on_msg(ch, method, props, body):
 
         #calular la distancia entre el sismo y la ciudad
         #creo que hay que usar una funcion llamada haversine que no se como funciona
-        dist = calular_distancia_km(CITY_LAT, CITY_LON, lat, lon)
+        dist = calcular_distancia_km(CITY_LAT, CITY_LON, lat, lon)
         
         print(f"[{CITY_NAME}] msg={texto} -> dist={dist:.1f} km, mag={mag}")
 
