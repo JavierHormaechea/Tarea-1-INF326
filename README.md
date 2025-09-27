@@ -44,7 +44,7 @@ curl http://localhost:8000/sismos/1
 # Valparaíso
 docker compose logs -f sub-valparaiso
 
-#abrir otra terminal y ejecutar para ver logs de Arica:
+#abrir otra terminal y ejecutar para ver logs de otro subscriber:
 docker compose logs -f sub-arica
 
 # Lo mismo para las otras ciudades:
