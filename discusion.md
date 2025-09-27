@@ -14,3 +14,13 @@ Ya que sabemos la cantidad de subscribers (1 por cada una de las 5 ciudades en e
 Pero dado que el número total de subscribers en este escenario es reducido y las consultas hacia la API se limitan a casos en los que un sismo efectivamente cae dentro del radio de 500 km, la carga generada sería baja y fácilmente manejable. Incluso en situaciones donde un mismo sismo active a varios subscribers simultáneamente, el volumen de solicitudes concurrentes seguiría siendo lo suficientemente pequeño como para que la arquitectura propuesta lo soporte sin inconvenientes. 
 
 Si se planteara un escenario hipotético con un número mayor de subscribers por ejemplo, uno por cada ciudad mediana/grande o por comunas de chile la probabilidad de que un sismo afecte a múltiples subscribers al mismo tiempo aumentaría considerablemente. En un evento de gran magnitud en la zona central, decenas de subscribers podrían encontrarse dentro del radio de 500 km y todos generarían solicitudes concurrentes hacia la API. Este razonamiento permite anticipar que, aunque la arquitectura actual es suficiente para el caso reducido de cinco subscribers, una expansión a gran escala podría hacerlos replantear nuestra decisión, o implementar optimizaciones adicionales, como caches compartidos, mecanismos de duplicación, alguna capa intermedia que centralice algunas consultas para evitar la sobrecarga del servicio HTTP, también podriamos reducir el radio de 500 km a un valor menor para limitar la cantidad de subscribers que recibirían un sismo de interés, lo que disminuiría la carga en la API. 
+
+<img width="1883" height="623" alt="image" src="https://github.com/user-attachments/assets/4a883447-1253-412b-b666-74aa637ed45e" />
+
+Mapa de sismos de la última semána:
+<img width="1305" height="956" alt="image" src="https://github.com/user-attachments/assets/86c895ad-48d0-4304-8e91-c248cf0e4cc4" />
+
+Imagenes por:
+Google Eath
+https://earthquakes.volcanodiscovery.com/map/Chile?L=8
+
