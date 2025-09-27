@@ -17,10 +17,10 @@ Si se planteara un escenario hipotético con un número mayor de subscribers por
 
 <img width="1883" height="623" alt="image" src="https://github.com/user-attachments/assets/4a883447-1253-412b-b666-74aa637ed45e" />
 
-Mapa de sismos de la última semána:
+Mapa de sismos de la última semana:
 <img width="1305" height="956" alt="image" src="https://github.com/user-attachments/assets/86c895ad-48d0-4304-8e91-c248cf0e4cc4" />
 
 Imagenes por:
-Google Eath
-https://earthquakes.volcanodiscovery.com/map/Chile?L=8
+- Google Eath
+- https://earthquakes.volcanodiscovery.com/map/Chile?L=8
 
