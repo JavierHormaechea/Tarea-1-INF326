@@ -27,7 +27,7 @@ Con esto los servicios que se levantan son:
 - Subscriber Coquimbo
 - Subscriber Punta Arenas
 
-- Para detener todo:
+Para detener todo:
 ```bash
 docker compose down
 ```
